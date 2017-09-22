@@ -22,8 +22,8 @@ var pickedBlue = 0;
 var pipetTool = false;
 
 function setup() {
-  createCanvas(758, 488);
-
+  var canvas = createCanvas(758, 488);
+  canvas.parent('sketch-holder');
   lm = new LEDMatrix();
   red_slider = new ColorPicker(488, 20, 30, 255, "red");
   green_slider = new ColorPicker(538, 20, 30, 255, "green");
@@ -173,14 +173,17 @@ function mousePressed() {
     }
     if (red_slider.intersects(mouseX, mouseY)) {
       pickedRed = red_slider.findColor(mouseY);
+      pickedRed = constrain(pickedRed, 0, 255);
       red_slider.y_piece = mouseY;
     }
     if (green_slider.intersects(mouseX, mouseY)) {
       pickedGreen = green_slider.findColor(mouseY);
+      pickedGreen = constrain(pickedGreen, 0, 255);
       green_slider.y_piece = mouseY;
     }
     if (blue_slider.intersects(mouseX, mouseY)) {
       pickedBlue = blue_slider.findColor(mouseY);
+      pickedBlue = constrain(pickedBlue, 0, 255);
       blue_slider.y_piece = mouseY;
     }
     if (black.intersects(mouseX, mouseY)) {

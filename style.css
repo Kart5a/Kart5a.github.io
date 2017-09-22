@@ -1,3 +1,12 @@
-textarea {
-width: 752px;
+canvas { margin: 0 auto; display: block;}
+
+#koodi {
+margin: 0 auto;
+display: block;
+width: 753px;
+}
+#credits {
+text-align: center;
+font-family: "Arial";
+font-size: 10px;
 }

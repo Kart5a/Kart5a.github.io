@@ -12,6 +12,11 @@ function LEDMatrix() {
   }
 
   this.show = function() {
+    stroke(255);
+    strokeWeight(6);
+    fill(5, 5, 5, 250);
+    rect(20, 20, 56*8, 56*8, 8, 8);
+    noStroke();
     for (var i = 0; i < this.LEDs.length; i++) {
       this.LEDs[i].show();
     }

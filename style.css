@@ -1,12 +1,35 @@
-canvas { margin: 0 auto; display: block;}
+canvas { margin: 0 auto; display: block; border-radius: 10px;}
 
 #koodi {
+   border-radius: 6px;
+   border: none;
 margin: 0 auto;
 display: block;
 width: 753px;
+font-Size: 15px;
+font-family: "SourceCodePro-Light";
+text-align: left;
+
 }
+
 #credits {
+   border-radius: 1px;
+
+text-align: center;
+font-family: "SourceCodePro-Light";
+color: white;
+font-size: 12px;
+}
+
+#title {
+   border-radius: 1px;
+
 text-align: center;
 font-family: "Arial";
-font-size: 10px;
+color: white;
+font-size: 35px;
+}
+
+body {
+  background-image: url(KART5AWP_blur.png);
 }

@@ -16,7 +16,7 @@ function ColorPicker( _x,  _y,  _w , _h,  _color) {
 
   this.findColor = function( _y) {
 
-    this.set_RGB = map(_y, this.y, this.y + this.h, 255, 0);
+    this.set_RGB = map(_y, this.y + 2, this.y + this.h - 2, 255, 0);
 
     return int(this.set_RGB);
   }

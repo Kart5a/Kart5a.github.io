@@ -13,6 +13,6 @@ function ColorDisplay() {
     fill(0);
     textAlign(LEFT, CENTER);
     textSize(20);
-    text("RGB: (" + pickedRed + ", " + pickedGreen + ", " + pickedBlue + ")", 488, 295);
+    text("RGB: (" + pickedRed + ", " + pickedGreen + ", " + pickedBlue + ")", 488, 305);
   }
 }

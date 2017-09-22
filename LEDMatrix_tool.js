@@ -31,12 +31,12 @@ function setup() {
   black = new Button("Black", 638, 20, 100, 30, color(0, 0, 0), color(255, 255, 255));
   white = new Button("White", 638, 70, 100, 30, color(255, 255, 255), color(0, 0, 0));
   clear_btn = new Button("Clear", 638, 120, 100, 30, color(220, 220, 220), color(0, 0, 0));
-  pipet = new Button("Pipet Tool", 488, 310, 130, 30, color(220, 220, 220), color(0, 0, 0));
-  shift_l = new Button("Left", 488, 355, 55, 30, color(220, 220, 220), color(0, 0, 0));
-  shift_r = new Button("Right", 553, 355, 55, 30, color(220, 220, 220), color(0, 0, 0));
-  shift_u = new Button("Up", 618, 355, 55, 30, color(220, 220, 220), color(0, 0, 0));
-  shift_d = new Button("Down", 683, 355, 55, 30, color(220, 220, 220), color(0, 0, 0));
-  copy_btn = new Button("Show Code", 488, 400, 250, 50, color(220, 220, 220), color(0, 0, 0));
+  pipet = new Button("Pipet Tool", 488, 332, 130, 30, color(220, 220, 220), color(0, 0, 0));
+  shift_l = new Button("Left", 488, 375, 55, 30, color(220, 220, 220), color(0, 0, 0));
+  shift_r = new Button("Right", 553, 375, 55, 30, color(220, 220, 220), color(0, 0, 0));
+  shift_u = new Button("Up", 618, 375, 55, 30, color(220, 220, 220), color(0, 0, 0));
+  shift_d = new Button("Down", 683, 375, 55, 30, color(220, 220, 220), color(0, 0, 0));
+  copy_btn = new Button("Show Code", 488, 418, 250, 50, color(220, 220, 220), color(0, 0, 0));
   cd = new ColorDisplay();
   lm.generate();
 }

@@ -19,9 +19,12 @@ function Button( _text,  _x,  _y,  _w,  _h,  _c1,  _c2) {
     fill(this.c1);
     rect(this.x, this.y, this.w, this.h, 4, 4);
     fill(this.c2);
-    textFont("Arial");
+    textFont(myFont);
     textAlign(CENTER, CENTER);
-    textSize(16);
+    textSize(15);
+    if (this.intersects(mouseX, mouseY)) {
+      textSize(18);
+   }
     text(this.text, this.x + this.w/2, this.y + this.h/2);
   }
 }

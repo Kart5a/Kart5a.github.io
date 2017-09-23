@@ -39,16 +39,19 @@ function ColorPicker(_x, _y, _w, _h, _color) {
          if (_color == "red") {
             pickedRed = this.findColor(mouseY);
             pickedRed = constrain(pickedRed, 0, 255);
+            this.y_piece = red_slider.y + int(red_slider.h) - pickedRed;
          }
          else if (_color == "green") {
             pickedGreen = this.findColor(mouseY);
             pickedGreen = constrain(pickedGreen, 0, 255);
+            this.y_piece = green_slider.y + int(green_slider.h) - pickedGreen;
          }
          else if (_color == "blue") {
             pickedBlue = this.findColor(mouseY);
             pickedBlue = constrain(pickedBlue, 0, 255);
+            this.y_piece = blue_slider.y + int(blue_slider.h) - pickedBlue;
          }
-         this.y_piece = mouseY;
+
          this.y_piece = constrain(this.y_piece, this.y, this.y + this.h);
       }
    }

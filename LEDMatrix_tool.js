@@ -1,5 +1,5 @@
 /*
-PYNQ LED MATIX CODE TOOL V 1.2
+PYNQ LED MATIX CODE TOOL V 1.3
 Made by Tino Kaartovuori
 */
 
@@ -36,6 +36,12 @@ var mouseHold = false;
 var mouseOverLed = false;
 var mouseOverSlider = false;
 
+var myFont;
+
+
+function preload() {
+  myFont = loadFont('SourceCodePro-Regular.ttf');
+}
 
 function setup() {
    // Creating canvas
@@ -51,7 +57,7 @@ function setup() {
    black_btn = new Button("Black", 638, 70, 100, 30, color(0, 0, 0), color(255, 255, 255));
    white_btn = new Button("White", 638, 20, 100, 30, color(255, 255, 255), color(0, 0, 0));
    clear_btn = new Button("Clear", 638, 120, 100, 30, color(255, 255, 255), color(0, 0, 0));
-   pipet_btn = new Button("Pipet Tool", 488, 332, 130, 30, color(255, 255, 255), color(0, 0, 0));
+   pipet_btn = new Button("Pipet Tool", 488, 292, 130, 70, color(255, 255, 255), color(0, 0, 0));
    shiftLeft_btn = new Button("Left", 488, 375, 55, 30, color(255, 255, 255), color(0, 0, 0));
    shiftRight_btn = new Button("Right", 553, 375, 55, 30, color(255, 255, 255), color(0, 0, 0));
    shiftUp_btn = new Button("Up", 618, 375, 55, 30, color(255, 255, 255), color(0, 0, 0));
@@ -73,6 +79,7 @@ function draw() {
    red_slider.update();
    green_slider.update();
    blue_slider.update();
+   colorDisplay.update();
 
    // Showing everything
    ledMatrix.show();
@@ -116,7 +123,7 @@ function inspectMouse() {
          break;
       }
    }
-   if (!flag){
+   if (!flag) {
       mouseOverLed = false;
    }
 
@@ -218,6 +225,224 @@ function shift(dir) {
    }
 }
 
+function keyPressed() {
+   if (colorDisplay.red_intersects(mouseX, mouseY)) {
+      if (keyCode == BACKSPACE || keyCode == DELETE) {
+         pickedRed = 0;
+      } else if (String(pickedRed).length < 3) {
+         //if (String(pickedRed).length > 2) {
+         //   pickedRed = 0;
+         //}
+         if (key == 1) {
+            pickedRed = String(pickedRed);
+            pickedRed += "1";
+            pickedRed = int(pickedRed);
+
+         }
+         if (key == 2) {
+            pickedRed = String(pickedRed);
+            pickedRed += "2";
+            pickedRed = int(pickedRed);
+
+         }
+         if (key == 3) {
+            pickedRed = String(pickedRed);
+            pickedRed += "3";
+            pickedRed = int(pickedRed);
+
+         }
+         if (key == 4) {
+            pickedRed = String(pickedRed);
+            pickedRed += "4";
+            pickedRed = int(pickedRed);
+
+         }
+         if (key == 5) {
+            pickedRed = String(pickedRed);
+            pickedRed += "5";
+            pickedRed = int(pickedRed);
+
+         }
+         if (key == 6) {
+            pickedRed = String(pickedRed);
+            pickedRed += "6";
+            pickedRed = int(pickedRed);
+
+         }
+         if (key == 7) {
+            pickedRed = String(pickedRed);
+            pickedRed += "7";
+            pickedRed = int(pickedRed);
+
+         }
+         if (key == 8) {
+            pickedRed = String(pickedRed);
+            pickedRed += "8";
+            pickedRed = int(pickedRed);
+
+         }
+         if (key == 9) {
+            pickedRed = String(pickedRed);
+            pickedRed += "9";
+            pickedRed = int(pickedRed);
+
+         }
+         if (key == 0) {
+            pickedRed = String(pickedRed);
+            pickedRed += "0";
+            pickedRed = int(pickedRed);
+
+         }
+      }
+   }
+   if (colorDisplay.green_intersects(mouseX, mouseY)) {
+      if (keyCode == BACKSPACE || keyCode == DELETE) {
+         pickedGreen = 0;
+      } else if (String(pickedGreen).length < 3) {
+         //if (String(pickedGreen).length > 2) {
+         //   pickedGreen = 0;
+         //}
+         if (key == 1) {
+            pickedGreen = String(pickedGreen);
+            pickedGreen += "1";
+            pickedGreen = int(pickedGreen);
+
+         }
+         if (key == 2) {
+            pickedGreen = String(pickedGreen);
+            pickedGreen += "2";
+            pickedGreen = int(pickedGreen);
+
+         }
+         if (key == 3) {
+            pickedGreen = String(pickedGreen);
+            pickedGreen += "3";
+            pickedGreen = int(pickedGreen);
+
+         }
+         if (key == 4) {
+            pickedGreen = String(pickedGreen);
+            pickedGreen += "4";
+            pickedGreen = int(pickedGreen);
+
+         }
+         if (key == 5) {
+            pickedGreen = String(pickedGreen);
+            pickedGreen += "5";
+            pickedGreen = int(pickedGreen);
+
+         }
+         if (key == 6) {
+            pickedGreen = String(pickedGreen);
+            pickedGreen += "6";
+            pickedGreen = int(pickedGreen);
+
+         }
+         if (key == 7) {
+            pickedGreen = String(pickedGreen);
+            pickedGreen += "7";
+            pickedGreen = int(pickedGreen);
+
+         }
+         if (key == 8) {
+            pickedGreen = String(pickedGreen);
+            pickedGreen += "8";
+            pickedGreen = int(pickedGreen);
+
+         }
+         if (key == 9) {
+            pickedGreen = String(pickedGreen);
+            pickedGreen += "9";
+            pickedGreen = int(pickedGreen);
+
+         }
+         if (key == 0) {
+            pickedGreen = String(pickedGreen);
+            pickedGreen += "0";
+            pickedGreen = int(pickedGreen);
+         }
+
+      }
+   }
+   if (colorDisplay.blue_intersects(mouseX, mouseY)) {
+      if (keyCode == BACKSPACE || keyCode == DELETE) {
+         pickedBlue = 0;
+      } else if (String(pickedBlue).length < 3) {
+         //if (String(pickedBlue).length > 2) {
+            //pickedBlue = 0;
+         //}
+         if (key == 1) {
+            pickedBlue = String(pickedBlue);
+            pickedBlue += "1";
+            pickedBlue = int(pickedBlue);
+
+         }
+         if (key == 2) {
+            pickedBlue = String(pickedBlue);
+            pickedBlue += "2";
+            pickedBlue = int(pickedBlue);
+
+         }
+         if (key == 3) {
+            pickedBlue = String(pickedBlue);
+            pickedBlue += "3";
+            pickedBlue = int(pickedBlue);
+
+         }
+         if (key == 4) {
+            pickedBlue = String(pickedBlue);
+            pickedBlue += "4";
+            pickedBlue = int(pickedBlue);
+
+         }
+         if (key == 5) {
+            pickedBlue = String(pickedBlue);
+            pickedBlue += "5";
+            pickedBlue = int(pickedBlue);
+
+         }
+         if (key == 6) {
+            pickedBlue = String(pickedBlue);
+            pickedBlue += "6";
+            pickedBlue = int(pickedBlue);
+
+         }
+         if (key == 7) {
+            pickedBlue = String(pickedBlue);
+            pickedBlue += "7";
+            pickedBlue = int(pickedBlue);
+
+         }
+         if (key == 8) {
+            pickedBlue = String(pickedBlue);
+            pickedBlue += "8";
+            pickedBlue = int(pickedBlue);
+
+         }
+         if (key == 9) {
+            pickedBlue = String(pickedBlue);
+            pickedBlue += "9";
+            pickedBlue = int(pickedBlue);
+
+         }
+         if (key == 0) {
+            pickedBlue = String(pickedBlue);
+            pickedBlue += "0";
+            pickedBlue = int(pickedBlue);
+         }
+      }
+   }
+
+   pickedRed = constrain(pickedRed, 0, 255);
+   pickedGreen = constrain(pickedGreen, 0, 255);
+   pickedBlue = constrain(pickedBlue, 0, 255);
+   red_slider.y_piece = red_slider.y + int(red_slider.h) - pickedRed;
+   green_slider.y_piece = green_slider.y + int(green_slider.h) - pickedGreen;
+   blue_slider.y_piece = blue_slider.y + int(blue_slider.h) - pickedBlue;
+}
+
+
+
 function mouseReleased() {
    mouseHold = false;
    for (var i = 0; i < ledMatrix.LEDs.length; i++) {
@@ -286,6 +511,21 @@ function mousePressed() {
             pipetTool = false;
          }
       }
+
+      if (colorDisplay.red_intersects(mouseX, mouseY)) {
+         pickedRed = 0;
+         red_slider.y_piece = red_slider.y + int(red_slider.h);
+      }
+      if (colorDisplay.green_intersects(mouseX, mouseY)) {
+         pickedGreen = 0;
+         green_slider.y_piece = green_slider.y + int(green_slider.h);
+      }
+      if (colorDisplay.blue_intersects(mouseX, mouseY)) {
+         pickedBlue = 0;
+         blue_slider.y_piece = blue_slider.y + int(blue_slider.h);
+      }
+
+
       if (showCode_btn.intersects(mouseX, mouseY)) {
          var code = preparePYNQcode();
          showCode(code);

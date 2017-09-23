@@ -1,8 +1,11 @@
 canvas { margin: 0 auto; display: block; border-radius: 10px;}
 
 #koodi {
-   border-radius: 6px;
-   border: none;
+-moz-border-radius-bottomright: 8px;
+-webkit-border-bottom-right-radius: 8px;
+-moz-border-radius-bottomleft: 8px;
+-webkit-border-bottom-left-radius: 8px;
+border: none;
 margin: 0 auto;
 display: block;
 width: 753px;
@@ -22,12 +25,35 @@ font-size: 12px;
 }
 
 #title {
-   border-radius: 1px;
-
+border-radius: 1px;
 text-align: center;
 font-family: "Arial";
 color: white;
 font-size: 35px;
+}
+
+button{
+
+background-color: white;
+border: none;
+margin: 0 auto;
+width: 755px;
+height: 25px;
+font-Size: 14px;
+display: block;
+font-family: 'Source Code Pro', monospace;
+text-align: center;
+cursor:pointer;
+-moz-border-radius-topright: 8px;
+-webkit-border-top-right-radius: 8px;
+-moz-border-radius-topleft: 8px;
+-webkit-border-top-left-radius: 8px;
+}
+
+
+button:hover {
+    background-color: #aae6c3;
+    color: black;
 }
 
 body {

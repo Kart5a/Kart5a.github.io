@@ -257,6 +257,7 @@ function mousePressed() {
    if (mouseButton == RIGHT) {
       for (var i = 0; i < lm.LEDs.length; i++) {
          if (pipetTool == false) {
+            mp = false;
             lm.LEDs[i].click(mouseX, mouseY, 0, 0, 0);
          }
       }

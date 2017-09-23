@@ -8,6 +8,7 @@ function ColorPicker(_x, _y, _w, _h, _color) {
    this.locked = false;
    this.over = false;
 
+   // Selects color depending on which slider is created
    if (_color == "red") {
       this.c1 = color(255, 0, 0);
    } else if (_color == "green") {
@@ -17,13 +18,14 @@ function ColorPicker(_x, _y, _w, _h, _color) {
    }
 
    this.findColor = function(_y) {
-
+      // Takes mouseY as an input and returns color value
       this.set_RGB = map(_y, this.y + 2, this.y + this.h - 2, 255, 0);
 
       return int(this.set_RGB);
    }
 
    this.update = function() {
+      // Disables lED drawing while sliding color
       if (this.intersects(mouseX, mouseY)) {
          this.over = true;
       } else {
@@ -57,6 +59,7 @@ function ColorPicker(_x, _y, _w, _h, _color) {
    }
 
    this.intersects = function(_x, _y) {
+         // Checks if something (x,y) is on the slider
       if (this.x <= _x && this.x + this.w > _x && this.y <= _y && this.y + this.h > _y) {
          return true;
       }
@@ -65,6 +68,7 @@ function ColorPicker(_x, _y, _w, _h, _color) {
 
 
    this.show = function() {
+      // Shows the slider
       this.setGradient(this.x, this.y, this.w, this.h, this.c1, this.c2);
       fill(255);
       noStroke();
@@ -74,6 +78,7 @@ function ColorPicker(_x, _y, _w, _h, _color) {
    }
 
    this.setGradient = function(x, y, w, h, c1, c2) {
+      // Creates gradient color
       noFill();
       for (var i = y; i <= y + h; i++) {
          var inter = map(i, y, y + h, 0, 1);

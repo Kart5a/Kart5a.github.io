@@ -7,13 +7,7 @@ function ColorDisplay() {
 
    this.c = color(pickedRed, pickedGreen, pickedBlue);
 
-
-   this.update = function() {
-      colorDisplay.red_intersects(mouseX, mouseY);
-      colorDisplay.green_intersects(mouseX, mouseY);
-      colorDisplay.blue_intersects(mouseX, mouseY);
-   }
-
+   // Checks if mouse is on RGB -value text
    this.red_intersects = function(_x, _y) {
       if (_x > this.x && _x <= this.x + this.w && _y > 280 && _y <= 280 + 27) {
          return true;
@@ -39,16 +33,22 @@ function ColorDisplay() {
 
    this.show = function() {
       this.c = color(pickedRed, pickedGreen, pickedBlue);
+
+      // Show Display
       stroke(255);
       strokeWeight(4);
       fill(this.c);
       rect(this.x, this.y, this.w, this.h, 6, 6);
+
+      // Show RGB Background
       fill(0);
       noStroke();
       textAlign(LEFT, CENTER);
       textSize(16);
       fill(this.bgc);
       rect(this.x, 280, 100, 82, 4, 4);
+
+      // Shows RGB texts
       textFont(myFont);
       if (this.red_intersects(mouseX, mouseY)) {
          fill(255, 0, 0);

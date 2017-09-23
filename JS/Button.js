@@ -8,6 +8,7 @@ function Button( _text,  _x,  _y,  _w,  _h,  _c1,  _c2) {
    this.c2 = _c2;
 
   this.intersects = function( _x,  _y) {
+     // Checks if something (x, y) is on the button
     if (this.x <= _x && this.x + this.w > _x && this.y <= _y && this.y + this.h > _y) {
       return true;
     }
@@ -15,6 +16,7 @@ function Button( _text,  _x,  _y,  _w,  _h,  _c1,  _c2) {
   }
 
   this.show = function() {
+     // Shows button
     noStroke();
     fill(this.c1);
     rect(this.x, this.y, this.w, this.h, 4, 4);

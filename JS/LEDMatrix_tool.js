@@ -1,6 +1,6 @@
 /*
 PYNQ LED MATIX CODE TOOL V 1.3
-Made by Tino Kaartovuori
+Made by Tino Kaartovuori 22.9.2017
 */
 
 // LED-Matrix
@@ -36,11 +36,12 @@ var mouseHold = false;
 var mouseOverLed = false;
 var mouseOverSlider = false;
 
+// Font
 var myFont;
 
 
 function preload() {
-  myFont = loadFont('SourceCodePro-Regular.ttf');
+  myFont = loadFont('Fonts/SourceCodePro-Regular.ttf');
 }
 
 function setup() {
@@ -79,7 +80,6 @@ function draw() {
    red_slider.update();
    green_slider.update();
    blue_slider.update();
-   colorDisplay.update();
 
    // Showing everything
    ledMatrix.show();
@@ -115,6 +115,7 @@ function draw() {
 }
 
 function inspectMouse() {
+   // This function disables color-sliding and drawing leds at the same time
    var flag = false;
    for (var i = 0; i < ledMatrix.LEDs.length; i++) {
       if (ledMatrix.LEDs[i].intersects(mouseX, mouseY)) {

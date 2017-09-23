@@ -4,6 +4,7 @@ function LEDMatrix() {
   this.LEDs = [];
 
   this.generate = function() {
+     // Generates whole LED matrix
     for (var y = 0; y < 8; y++) {
       for (var x = 0; x < 8; x++) {
         this.LEDs.push(new LED(20 + 56*x, 20 + 56*y, x, y));
@@ -12,6 +13,7 @@ function LEDMatrix() {
   }
 
   this.show = function() {
+     // Shows LED matrix
     stroke(255);
     strokeWeight(6);
     fill(5, 5, 5, 250);

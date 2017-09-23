@@ -31,15 +31,16 @@ function LED(_x, _y, _x_matrix, _y_matrix) {
    }
 
    this.update = function() {
+
       if (this.intersects(mouseX, mouseY)) {
          this.over = true;
       } else {
          this.over = false;
       }
-      if (mp && this.over && pipetTool == false) {
+      if (mouseHold && this.over && pipetTool == false && mouseOverSlider == false) {
          this.locked = true;
       }
-      if (!mp) {
+      if (mouseHold == false || mouseOverSlider) {
          this.locked = false;
       }
       if (this.locked) {

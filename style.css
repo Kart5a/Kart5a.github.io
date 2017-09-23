@@ -7,7 +7,7 @@ margin: 0 auto;
 display: block;
 width: 753px;
 font-Size: 15px;
-font-family: "SourceCodePro-Light";
+font-family: "Arial";
 text-align: left;
 
 }
@@ -16,7 +16,7 @@ text-align: left;
    border-radius: 1px;
 
 text-align: center;
-font-family: "SourceCodePro-Light";
+font-family: "Arial";
 color: white;
 font-size: 12px;
 }

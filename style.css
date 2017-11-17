@@ -59,3 +59,41 @@ button:hover {
 body {
    background-image: url(Images/KART5AWP_blur.png);
 }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #aae6c3;
+-moz-border-radius-topright: 8px;
+-webkit-border-top-right-radius: 8px;
+-moz-border-radius-topleft: 8px;
+-webkit-border-top-left-radius: 8px;
+-moz-border-radius-bottomright-8px;
+-webkit-border-bottom-right-radius: 8px;
+-moz-border-radius-bottomleft-8px;
+-webkit-border-bottom-left-radius: 8px;
+}
+
+li {
+    float: left;
+
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+	font-family: 'Source Code Pro', monospace;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #aae6c3;
+}
+
+.active {
+    background-color: white;
+}

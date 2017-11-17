@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Salaaja (Tino K)</title>
+    <link rel="stylesheet" type="text/css" href="CSS.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.2/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.2/addons/p5.dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.2/addons/p5.sound.js"></script>
+    <script src="Cipher.js" type="text/javascript"></script>
+  </head>
+
+  <body bgcolor="#E6E6FA">
+    <h1 style="font-family:Arial">Salaaja</h1>
+    <textarea
+    style="overflow:auto;resize:none"
+    id="muunnettava"
+    rows="15"
+    cols="100">Kirjoita muunnettava teksti!</textarea>
+    <button onclick="salaa()" value="s">Salaa</button>
+    <button onclick="desalaa()" value="poistas">Poista salaus</button>
+    <input id="salasana" type="text">
+    <textarea
+    style="overflow:auto;resize:none"
+    id="muunnettu"
+    rows="15"
+    cols="100"></textarea>
+  </body>
+
+</html>

@@ -1,4 +1,4 @@
-var grid = 15;
+var grid = 15*2;
 var mato;
 var koristeet;
 var ruoka;
@@ -9,20 +9,21 @@ var kello;
 var timantti;
 
 function preload() {
-  loadFont("JS/Img/nokiafc22.ttf");
-  timanttikuva = loadImage("JS/Img/Timantti.png");
-  plop = new Audio("JS/Sounds/Plop.wav");
-  nam = new Audio("JS/Sounds/Nam.wav");
-  pling = new Audio("JS/Sounds/Pling.wav");
-  pum = new Audio("JS/Sounds/Pum.wav");
-  tiktak = new Audio("JS/Sounds/Tiktak.wav");
-  viush = new Audio("JS/Sounds/Viush.wav");
-  tadaa = new Audio("JS/Sounds/Tadaa.wav");
-  au = new Audio("JS/Sounds/Au.wav");
+  loadFont("JS/Matopeli/Add/nokiafc22.ttf");
+  timanttikuva = loadImage("JS/Matopeli/Add/Timantti.png");
+  plop = new Audio("JS/Matopeli/Add/Plop.wav");
+  nam = new Audio("JS/Matopeli/Add/Nam.wav");
+  pling = new Audio("JS/Matopeli/Add/Pling.wav");
+  pum = new Audio("JS/Matopeli/Add/Pum.wav");
+  tiktak = new Audio("JS/Matopeli/Add/Tiktak.wav");
+  viush = new Audio("JS/Matopeli/Add/Viush.wav");
+  tadaa = new Audio("JS/Matopeli/Add/Tadaa.wav");
+  au = new Audio("JS/Matopeli/Add/Au.wav");
 }
 
 function setup() {
-  createCanvas(300, 240);
+  var canvas = createCanvas(300*2, 240*2);
+  canvas.parent('game');
   frameRate(8);
   mato = new Mato();
   koristeet = new Koristeet();

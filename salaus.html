@@ -2,29 +2,43 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Salaaja (Tino K)</title>
+    <title>Salaaja</title>
     <link rel="stylesheet" type="text/css" href="CSS.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.2/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.2/addons/p5.dom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.2/addons/p5.sound.js"></script>
-    <script src="JS/Cipher.js" type="text/javascript"></script>
+    <script src="JS/Salaus/Cipher.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
 
   <body bgcolor="#E6E6FA">
-    <h1 style="font-family:Arial">Salaaja</h1>
+    <ul>
+       <li><a href="index.html">PYNQ LEDMatrix Tool</a></li>
+       <li><a class="active" href="salaus.html">Salaaja</a></li>
+       <li><a href="matopeli.html">Matopeli</a></li>
+   </ul>
+    <h1>SALAAJA</h1>
     <textarea
     style="overflow:auto;resize:none"
+    class="btn_u"
     id="muunnettava"
     rows="15"
-    cols="100">Kirjoita muunnettava teksti!</textarea>
+    cols="100"
+    placeholder="Kirjoita teksti!">
+</textarea>
+<input id="salasana" type="text" placeholder="Kirjoita avain">
     <button onclick="salaa()" value="s">Salaa</button>
     <button onclick="desalaa()" value="poistas">Poista salaus</button>
-    <input id="salasana" type="text">
+
     <textarea
     style="overflow:auto;resize:none"
+    class="btn_d"
     id="muunnettu"
     rows="15"
     cols="100"></textarea>
+    <div id="credits">
+      Salaaja v1.0 // Made by Tino Kaartovuori 6/2017
+    </div>
   </body>
 
 </html>

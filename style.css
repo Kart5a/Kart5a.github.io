@@ -59,7 +59,7 @@ button:hover {
    color: black;
 
 }
-#btn {
+.btn {
    -moz-border-radius-topright: 8px;
    -webkit-border-top-right-radius: 8px;
    -moz-border-radius-topleft: 8px;

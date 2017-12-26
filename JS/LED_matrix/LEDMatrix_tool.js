@@ -71,7 +71,7 @@ function setup() {
 }
 
 function draw() {
-   background(170, 230, 195, 200, 1);
+   background(185, 220, 185, 200, 1);
 
    // Updating objects
    for (var i = 0; i < ledMatrix.LEDs.length; i++) {

@@ -1,17 +1,15 @@
-function Bullet(_x, _y, _xspeed, _yspeed, power) {
+function TSS(_x, _y, _xspeed, _yspeed) {
    this.x = _x;
    this.y = _y;
    this.xspeed = _xspeed;
    this.yspeed = _yspeed;
-   this.power = power;
-   this.d = (this.power/6)*(1+(1-(this.power/100)));
-   this.color = 255 - this.power * 2.55;
-   this.color = constrain(this.color, 0, 255);
-   this.power = constrain(this.power, 10, 100);
+   this.power = 100;
+   this.d = 10;
 
    this.show = function() {
-      fill(this.color);
-      stroke(0);
+      fill(220, 0, 110);
+      strokeWeight(3);
+      stroke(0, 0, 255);
       ellipse(this.x, this.y, this.d);
       if (this.y < height / 10) {
          fill(0, 80);
@@ -19,6 +17,8 @@ function Bullet(_x, _y, _xspeed, _yspeed, power) {
          noStroke();
          text(floor(this.y*-1/2 + height/10), this.x + 10, height/10 + 40);
       }
+      strokeWeight(1);
+      noStroke();
    }
 
    this.move = function() {

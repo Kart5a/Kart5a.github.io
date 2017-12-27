@@ -5,7 +5,11 @@ function Cannon(left = false) {
    this.h = 20;
 
    this.hp = 100;
-   this.money = 10;
+   this.money = 120;
+   this.power = 35;
+
+   this.repairs = 0;
+   this.tss = false;
 
    if (left) {
       this.x = width / 5 * 4;
@@ -56,7 +60,7 @@ function Cannon(left = false) {
          this.moveDown();
       }
 
-      if (this.turn && mouseY > height/10) {
+      if (this.turn && mouseY > height/10 && can_shoot) {
          this.showForce();
          this.showPipe();
       }

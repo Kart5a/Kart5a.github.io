@@ -10,7 +10,7 @@ let shop = [];
 let rounds = 0;
 
 function setup() {
-   createCanvas(800, 1000);
+   createCanvas(1400, 1000);
    terrain = new Terrain();
    panel = new Panel();
    cannons.push(new Cannon(left = false));
@@ -113,6 +113,20 @@ function setTurn() {
    }
 }
 
+function wins(cannon) {
+
+}
+
+function resetGame() {
+   for (var c of cannons) {
+      c.resetAll();
+   }
+   terrain.generate();
+   newWind();
+   rounds = 0;
+   bullets = [];
+}
+
 function newWind() {
    var r = random(-1, 1);
    wind = wind * 2 / 3 + r / 3;
@@ -181,7 +195,7 @@ function mousePressed() {
 function keyPressed() {
    terrain.generate();
    for (var c of cannons) {
-      c.reset();
+      c.resetPosition();
    }
 }
 

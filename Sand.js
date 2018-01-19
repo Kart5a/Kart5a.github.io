@@ -1,17 +1,24 @@
-function Sand(_x, _y, green) {
+function Sand(_x, _y, color) {
    this.x = _x;
    this.y = _y;
-   this.r1 = random(40, 60);
+   this.col = [0, 0, 0];
 
-   if (green) {
+   if (color == 1) {
       this.r2 = random(150, 200);
-   } else {
-      this.r2 = random(30, 50);
+      this.r1 = random(40, 60);
+      this.col = [this.r1, this.r2, 3];
+
+   } else if (color == 2){
+      this.r1 = random(40, 60);
+      this.col = [this.r1, this.r1, 3];
+
+   } else if (color == 3){
+      this.col = [255, 255, 255];
    }
 
    this.show = function() {
       rectMode(CENTER);
-      fill(this.r1, this.r2, 3);
+      fill(this.col[0], this.col[1], this.col[2]);
       noStroke();
       rect(this.x, this.y, terrain.space, terrain.space);
    }

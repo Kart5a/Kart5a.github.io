@@ -91,7 +91,28 @@ function Cannon(left = false) {
       return move;
    }
 
-   this.reset = function() {
+   this.resetAll = function() {
+      this.y = height / 3;
+      this.w = 40;
+      this.h = 20;
+
+      this.hp = 100;
+      this.money = 120;
+      this.power = 35;
+
+      this.repairs = 0;
+      this.tss = false;
+
+      if (left) {
+         this.x = width / 5 * 4;
+         this.turn = false;
+      } else {
+         this.x = width / 5 - this.w;
+         this.turn = true;
+      }
+   }
+
+   this.resetPosition = function() {
       this.y = height / 3;
    }
 

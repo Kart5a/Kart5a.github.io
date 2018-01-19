@@ -1,6 +1,6 @@
 function Terrain() {
 
-   this.space = 8;
+   this.space = 10;
    this.xoff = 100;
    this.y;
 
@@ -15,12 +15,17 @@ function Terrain() {
          for (var j = 0; j < ((3 * height / 5) - this.y) / this.space; j++) {
             var num = random(1, 4);
             if (j < num) {
-               this.sands.push(new Sand(i * this.space, 2 * height / 5 + this.y + j * this.space, true));
+               if (this.y < 200) {
+                  this.sands.push(new Sand(i * this.space, 2 * height / 5 + this.y + j * this.space, 3));
+               } else {
+                  this.sands.push(new Sand(i * this.space, 2 * height / 5 + this.y + j * this.space, 1));
+
+               }
             } else {
-               this.sands.push(new Sand(i * this.space, 2 * height / 5 + this.y + j * this.space, false));
+               this.sands.push(new Sand(i * this.space, 2 * height / 5 + this.y + j * this.space, 2));
             }
          }
-         this.xoff += width / 140000 * this.space;
+         this.xoff += width / 300000 * this.space;
       }
    }
 

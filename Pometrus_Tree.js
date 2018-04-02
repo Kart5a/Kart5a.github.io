@@ -10,14 +10,8 @@ var bg_img;
 
 var pometrus_fruits = [];
 var _temp;
-var vrm = [];
 
 function preload() {
-
-   if (read_cookie('id') == null) {
-      var str = floor(random(0, 1000));
-      bake_cookie('id', str);
-   }
 
    for (var i = 0; i < 8; i++) {
       img = loadImage("images/puu" + i + ".png");
@@ -70,28 +64,12 @@ function setup() {
    tree = new Tree(data.treeData.name, data.treeData.age, data.treeData.growth, data.treeData.waterLevel, data.treeData.dryness, data.treeData.pometrusPicked, data.treeData.pometrusSpawned, data.treeData.pometrusMissed, data.treeData.pometrusFell, data.treeData.form);
    watering_can = new Watering_can();
 
-   vrms();
-
 }
 
 function draw() {
    background(0);
    image(bg_img, 0, 0);
 
-   if ((dec(vrm[0]) != tree.age ||
-         vrm[1] != ec(tree.growth) ||
-         vrm[2] != ec(tree.pometrusPicked) ||
-         dec(vrm[3]) != tree.form ||
-         dec(vrm[4]) != tree.pometrusMissed ||
-         dec(vrm[5]) != tree.pometrusSpawned ||
-         dec(vrm[6]) != tree.pometrusFell ||
-         dec(vrm[7]) != tree.dryness) &&
-      tree.flag == 0) {
-      addBan();
-   }
-   vrms();
-
-   if (read_cookie('ban') != true) {
       tree.showStats();
       tree.show();
       watering_can.show();
@@ -117,9 +95,6 @@ function draw() {
             tree.pometrusMissed += 1;
          }
       }
-   } else {
-      denyAccess();
-   }
 }
 
 function mousePressed() {
@@ -135,7 +110,6 @@ function mousePressed() {
    }
    tree.treeCookie();
    pometrusCookie();
-   tree.flag = 0;
 }
 
 
@@ -179,39 +153,4 @@ function read_cookie(name) {
 
 function delete_cookie(name) {
    document.cookie = [name, '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.', window.location.host.toString()].join('');
-}
-
-function ec(_x) {
-   let a = read_cookie('id');
-   return _x * a;
-}
-
-function dec(_x) {
-   let a = read_cookie('id');
-   return _x / a;
-}
-
-function vrms() {
-   vrm[0] = ec(tree.age);
-   vrm[1] = ec(tree.growth);
-   vrm[2] = ec(tree.pometrusPicked);
-   vrm[3] = ec(tree.form);
-   vrm[4] = ec(tree.pometrusMissed);
-   vrm[5] = ec(tree.pometrusSpawned);
-   vrm[6] = ec(tree.pometrusFell);
-   vrm[7] = ec(tree.dryness);
-}
-
-function addBan() {
-   bake_cookie('treeData', null, 0);
-   bake_cookie('ban', true, 10000);
-   pometrus_fruits = [];
-   location.reload();
-}
-
-function denyAccess() {
-   fill(255, 0, 0);
-   textSize(40);
-   textAlign(CENTER, CENTER);
-   text("You cannot play due cheating", width / 2, height / 2);
 }

@@ -12,7 +12,7 @@ function setup() {
    background(200);
    frameRate(5);
 
-   socket = io.connect('https://kart5a.github.io/');
+   socket = io.connect('https://pixlplace.herokuapp.com/');
    //socket = io.connect('http://localhost:5000');
 
    socket.on('loadColor', loadColor);

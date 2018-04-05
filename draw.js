@@ -2,7 +2,7 @@ var socket;
 var res = 5;
 var pixels = [];
 var palettes = [];
-
+//jee settii
 
 function setup() {
 

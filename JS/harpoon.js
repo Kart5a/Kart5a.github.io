@@ -6,6 +6,7 @@ var tuuli = 0;
 var ammuttu = false;
 
 var images = [];
+let path = [];
 
 function preload() {
   for (var i = 1; i < 10; i++) {
@@ -38,6 +39,7 @@ function draw() {
 function newgame() {
   ammuttu = false;
   field_matrix = [];
+  path = [];
     for (var i = 0; i < H; i++) {
       field_matrix[i] = [];
       for (var j = 0; j < W; j++) {
@@ -124,6 +126,11 @@ function Show() {
       }
     }
 
+  for (let i=0; i < path.length - 1; i++) {
+    fill(0);
+    ellipse(path[i][0], path[i][1], 2);
+  }
+
 }
 
 function ammu(_deg, _force) {
@@ -144,6 +151,7 @@ function ammu(_deg, _force) {
 
       let i = 0;
       let flag = true;
+      path = [];
 
       while (flag) {
 
@@ -158,6 +166,8 @@ function ammu(_deg, _force) {
         if (_y >= c_h) {
           break;
         }
+
+        path.push([_x * scale / c_w * W, _y * scale / c_h * H]);
 
         _xtile = Math.floor(_x / c_w * W);
         _ytile = Math.floor(_y / c_h * H);

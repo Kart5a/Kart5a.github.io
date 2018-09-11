@@ -8,10 +8,14 @@ var ammuttu = false;
 var images = [];
 
 function preload() {
-  for (var i = 1; i < 11; i++) {
-    if (i == 5) continue;
+  for (var i = 1; i < 10; i++) {
+    if (i == 5) {
+      images.push(" ");
+      continue;
+    }
     images.push(loadImage("Images/hp/" + i + ".png"));
   }
+  console.log(images);
 }
 
 function setup() {
@@ -94,21 +98,21 @@ function Show() {
         if (field_matrix[y][x] == 0) {
 
         } else if (field_matrix[y][x] == 8) {
-          image(images[8], x*scale, y*scale, scale, scale);
-        } else if (field_matrix[y][x] == 1) {
-          image(images[1], x*scale, y*scale, scale, scale);
-        } else if (field_matrix[y][x] == 2) {
-          image(images[2], x*scale, y*scale, scale, scale);
-        } else if (field_matrix[y][x] == 3) {
-          image(images[3], x*scale, y*scale, scale, scale);
-        } else if (field_matrix[y][x] == 9) {
-          image(images[9], x*scale, y*scale, scale, scale);
-        } else if (field_matrix[y][x] == 6) {
-          image(images[6], x*scale, y*scale, scale, scale);
-        } else if (field_matrix[y][x] == 7) {
           image(images[7], x*scale, y*scale, scale, scale);
+        } else if (field_matrix[y][x] == 1) {
+          image(images[0], x*scale, y*scale, scale, scale);
+        } else if (field_matrix[y][x] == 2) {
+          image(images[1], x*scale, y*scale, scale, scale);
+        } else if (field_matrix[y][x] == 3) {
+          image(images[2], x*scale, y*scale, scale, scale);
+        } else if (field_matrix[y][x] == 9) {
+          image(images[8], x*scale, y*scale, scale, scale);
+        } else if (field_matrix[y][x] == 6) {
+          image(images[5], x*scale, y*scale, scale, scale);
+        } else if (field_matrix[y][x] == 7) {
+          image(images[6], x*scale, y*scale, scale, scale);
         } else if (field_matrix[y][x] == 4) {
-          image(images[4], x*scale, y*scale, scale, scale);
+          image(images[3], x*scale, y*scale, scale, scale);
         }
       }
     }

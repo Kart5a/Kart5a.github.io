@@ -23,7 +23,7 @@ function setup() {
 }
 
 function draw() {
-  background(204, 229, 255);
+  background(200, 225, 255);
   for (let y = 0; y < H; y++) {
       for (let x = 0; x < W; x++) {
         stroke(60, 80, 180);

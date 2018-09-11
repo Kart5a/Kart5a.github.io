@@ -131,7 +131,7 @@ function ammu(_deg, _force) {
 
         i++;
 
-        _x = _x + _tuuli/5*i/2000 + f_x / 100;
+        _x = _x + tuuli/5*i/2000 + f_x / 100;
         _y = _y - (g * i / 100 + f_y / 100);
 
         if (_x <= 0 || _x > c_w) {

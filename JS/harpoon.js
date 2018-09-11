@@ -5,6 +5,14 @@ var field_matrix = [];
 var tuuli = 0;
 var ammuttu = false;
 
+var images = [];
+
+function preload() {
+  for (var i = 1; i < 11; i++) {
+    images.push(loadImage("images/Harpoon -kuvakkeet/" + i + ".png"));
+  }
+}
+
 function setup() {
   createCanvas(W*scale, H*scale);
   newgame();
@@ -76,35 +84,30 @@ function newgame() {
 }
 
 function Show() {
+  textSize(15);
+  textAlign(LEFT, CENTER);
+  text("Tuuli: " + tuuli, 10, 15);
 
   for (let y = 0; y < H; y++) {
       for (let x = 0; x < W; x++) {
         if (field_matrix[y][x] == 0) {
 
         } else if (field_matrix[y][x] == 8) {
-          fill(0, 0, 100);
-          rect(x*scale, y*scale, scale, scale);
+          image(images[8], x*scale, y*scale, scale, scale);
         } else if (field_matrix[y][x] == 1) {
-          fill(100);
-          rect(x*scale, y*scale, scale, scale);
+          image(images[1], x*scale, y*scale, scale, scale);
         } else if (field_matrix[y][x] == 2) {
-          fill(255,0,0);
-          rect(x*scale, y*scale, scale, scale);
+          image(images[2], x*scale, y*scale, scale, scale);
         } else if (field_matrix[y][x] == 3) {
-          fill(120, 0, 120);
-          rect(x*scale, y*scale, scale, scale);
+          image(images[3], x*scale, y*scale, scale, scale);
         } else if (field_matrix[y][x] == 9) {
-          fill(255);
-          rect(x*scale, y*scale, scale, scale);
+          image(images[9], x*scale, y*scale, scale, scale);
         } else if (field_matrix[y][x] == 6) {
-          fill(255);
-          rect(x*scale, y*scale, scale, scale);
+          image(images[6], x*scale, y*scale, scale, scale);
         } else if (field_matrix[y][x] == 7) {
-          fill(255, 100, 30);
-          rect(x*scale, y*scale, scale, scale);
+          image(images[7], x*scale, y*scale, scale, scale);
         } else if (field_matrix[y][x] == 4) {
-          fill(0, 0, 50);
-          rect(x*scale, y*scale, scale, scale);
+          image(images[4], x*scale, y*scale, scale, scale);
         }
       }
     }
@@ -112,9 +115,9 @@ function Show() {
 }
 
 function ammu(_deg, _force) {
-  if (ammuttu) {
-    return console.log("Kirjoita newgame();");
-  }
+      if (ammuttu) {
+        return console.log("Kirjoita newgame();");
+      }
   		ammuttu = true;
   		let c_w = W * 10;
       let c_h = H * 10;

@@ -26,8 +26,8 @@ function draw() {
   background(200, 225, 255);
   for (let y = 0; y < H; y++) {
       for (let x = 0; x < W; x++) {
-        stroke(60, 80, 180);
-        fill(80, 100, 220);
+        stroke(100, 180, 250);
+        fill(150, 205, 255);
         rect(x*scale, y*scale, scale, scale);
     }
   }

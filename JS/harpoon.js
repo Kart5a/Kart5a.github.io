@@ -112,6 +112,9 @@ function Show() {
 }
 
 function ammu(_deg, _force) {
+  if (ammuttu) {
+    return console.log("Kirjoita newgame();");
+  }
   		ammuttu = true;
   		let c_w = W * 10;
       let c_h = H * 10;

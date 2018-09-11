@@ -9,7 +9,7 @@ var images = [];
 
 function preload() {
   for (var i = 1; i < 11; i++) {
-    images.push(loadImage("Images/Harpoon -kuvakkeet/" + i + ".png"));
+    images.push(loadImage("Images/hp/" + i + ".png"));
   }
 }
 

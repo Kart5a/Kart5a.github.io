@@ -1,6 +1,6 @@
 const W = 18;
 const H = 10;
-const scale = 30;
+const scale = 50;
 var field_matrix = [];
 var tuuli = 0;
 var ammuttu = false;
@@ -15,7 +15,6 @@ function preload() {
     }
     images.push(loadImage("Images/hp/" + i + ".png"));
   }
-  console.log(images);
 }
 
 function setup() {
@@ -25,6 +24,13 @@ function setup() {
 
 function draw() {
   background(80, 100, 220);
+  for (let y = 0; y < H; y++) {
+      for (let x = 0; x < W; x++) {
+        stroke(60, 80, 180);
+        fill(80, 100, 220);
+        rect(x*scale, y*scale, scale, scale);
+    }
+  }
   Show();
 
 }
@@ -89,6 +95,7 @@ function newgame() {
 }
 
 function Show() {
+  fill(0);
   textSize(15);
   textAlign(LEFT, CENTER);
   text("Tuuli: " + tuuli, 10, 15);
